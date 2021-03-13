@@ -1,12 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 // create an array to draw characters from
 var alphaU ="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var alphaL ="abcdefghijklmnopqrstuvwxyz".split("");
 var number = "1234567890".split("");
 var other = "! #$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
-
-
+// create empty arrys to push letters to 
 var pass= [];
 var pass2 = [];
 
@@ -27,14 +27,14 @@ function writePassword() {
 
 
 // Add event listener to generate button
-// Add prompt and alert buttons to get data from person 
+
 generateBtn.addEventListener("click", writePassword);{
  
- 
+ // create function to begin after button push
  function generatePassword(){
   var passLenght = prompt ("please select how many characters between 8 and 128 long");
 
-  
+  // Add prompt and alert buttons to get data from person 
   console.log (passLenght)
 if ( passLenght <8 ){
       alert("Invalad selection");
@@ -44,6 +44,7 @@ if ( passLenght <8 ){
     alert ("Invalid selection");
     
   }
+  //get information and add it to pass array
  else {
      var upper = confirm ("Would you like upper-case letters");
     if (upper){
@@ -77,9 +78,9 @@ if ( passLenght <8 ){
           alert("Thank you for your selection Generating password");
         }
  }
+ // using inputs from user create password
 if (upper = true, lower = true, special = true, num = true){
- 
- 
+  
   for (var i=0; i < passLenght;i++){
 
     pass.push( (pass2[Math.floor(Math.random()*pass2.length)]));
@@ -102,17 +103,10 @@ if (upper = true, lower = true, special = true, num = true){
 
       pass.push( (pass2[Math.floor(Math.random()*pass2.length)]));
   }
-  }
-
+}
+// turn arry into string for output 
 return pass.join("")
- 
  }
-
-  console.log(pass)
-  console.log(pass2)
- 
- 
- 
 }
  
 
